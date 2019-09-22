@@ -1,0 +1,26 @@
+<div class="full-width"  style="margin: auto; margin-bottom: 1em;">
+    <p style="float: right; margin: 0px;">Note that pastes are automatically deleted 2 days after they have been pasted.</p>
+    <h3>Existing Paste</h3>
+    <div *ngIf="paste?.id">
+        <span class="background-primary text-floral-white" style="padding: 0.5em; margin-right: 0.5em;">
+            {{path}}
+        </span>
+        <button mat-button class="background-primary text-floral-white" (click)="copyURL()">Copy URL</button>
+        <span [hidden]="!urlCopied" [@expand] style="margin-left: 0.5em;">URL copied</span>
+    </div>
+    <div [@expand] *ngIf="!paste && !errMsg" style="width: 200px; margin: auto;">
+            <h4>Loading Paste</h4>
+            <mat-spinner></mat-spinner>
+    </div>        
+    <div *ngIf="paste?.text" [@expand]>
+        <div style="text-align: right;">
+            <span [hidden]="!textCopied" [@expand] style="margin-right: 0.5em;">Text copied</span>
+            <button mat-button class="background-primary text-floral-white" (click)="copyText()">Copy Text</button>
+        </div>
+        <pre class="paste">{{paste.text}}</pre>
+    </div>
+    <div *ngIf="errMsg" [@expand] style="text-align: center;">
+        <h2>Error</h2>
+        <h4>{{errMsg}}</h4>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+RewriteEngine On
+DirectoryIndex index.html
+RewriteCond "%{REQUEST_URI}" "! .*(\.css|js|ico|txt)"
+RewriteRule .* index.html [L]

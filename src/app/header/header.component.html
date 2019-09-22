@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+    <a mat-button routerLink="/" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> New Paste</a>
+    <a mat-button [routerLink]="['/', id]" routerLinkActive="active" *ngIf="router.url != '/'"><span class="fa fa-home fa-lg"></span> Paste {{id}}</a>
+    <span class="flex-spacer"></span>
+    Paste House
+</mat-toolbar>

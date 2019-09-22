@@ -1,0 +1,22 @@
+<div style="margin-bottom: 1em;">
+    <div [hidden]="formSpinner || errMsg" [@expand]>
+        <p style="float: right; margin: 0px; margin-right: 2.5%;">Note that pastes are automatically deleted 2 days after they have been pasted.</p>
+        <h3 style="margin-left: 2.5%;">Paste or type text you want to share here</h3>
+        <form novalidate [formGroup]="pasteForm" (ngSubmit)="onSubmit()">
+        <div style="text-align: center;">
+            <textarea matInput formControlName="text" placeholder="Your Paste" rows=12 class="background-primary text-floral-white full-width" autofocus></textarea>
+        </div>
+        <div style="margin-left: 2.5%;">
+            <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="pasteForm.invalid">Paste</button>
+        </div>    
+        </form>
+    </div>
+    <div [@expand] *ngIf="formSpinner" style="width: 200px; margin: auto;">
+        <h4>Submitting Paste</h4>
+        <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="errMsg" [@expand] style="text-align: center;">
+        <h2>Error</h2>
+        <h4>{{errMsg}}</h4>
+    </div>
+</div>

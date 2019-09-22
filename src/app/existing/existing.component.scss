@@ -1,0 +1,25 @@
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
+$primary-color-dark:   #512DA8;
+$primary-color:        #673AB7;
+$primary-color-light:  #D1C4E9;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FFC107;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+
+.full-width {
+    width: 95%
+}
+
+.paste {
+    background-color: $primary-color;
+    color: $primary-color-text;
+    border: 1px solid #000000;
+    padding: 1vw;
+    font-size: 1.5vw;
+    white-space: pre-wrap;
+}
